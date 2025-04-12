@@ -57,5 +57,8 @@ public class CiutatServiceImpl implements CiutatService {
         if (ciutat.getNom() == null || ciutat.getNom().isEmpty()) {
             throw new RuntimeException("Nom nula");
         }
+        if (ciutat.getPrefixTel() <= 0) {
+            throw new IllegalArgumentException("El prefix telefonic ha de ser un nombre positiu.");
+        }
     }
 }
